@@ -31,12 +31,6 @@ function MembershipList() {
         <span>Books List</span>
       </button>
       </Link>
-      <center>
-        <div className="chatlist__heading">
-          <h2>Membership List</h2>
-        </div>
-      </center>
-
       <div className="chatlist__items">{membershipList}</div>
     </div>
   );

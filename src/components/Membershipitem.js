@@ -18,39 +18,27 @@ export default function ChatRoomitem(props) {
         (membership.membership === "gold"     && membership.currentlyBorrowedBooks.length === 3 ) || 
         (membership.membership === "silver"   && membership.currentlyBorrowedBooks.length === 2 )) 
     {
-    return ( <Button disabled variant="danger" className="delete" onClick={openModal}> Borrow</Button>)
+    return (<button className="book_item_Borrowed_button_full">Full</button>)
     }
     else {
-     return( <Button  className="delete" onClick={openModal}> Borrow </Button>)
+     return( <button onClick={openModal} className="book_item_Borrowed_button_card">Borrow</button>)
     }
   }
 
   return (
-    <div className="group">
-      <Link to={`/borrow/`}>
-        <div style={{ animationDelay: "0.1" }} className="chatlist__item">
-          <div className="avatar">
-            <div className="avatar-img">
-              <img
-                src="https://static.thenounproject.com/png/363639-200.png"
-                alt="#"
-              />
-            </div>
-          </div>
-          <div className="userMeta">
-            <p>
-              {membership.firstName} - {membership.lastName}
-            </p>
-            <span className="activeTime" style={{ color: membership.membership }}>
-              {membership.membership}
-            </span>
-            <Memberbooks membership={membership.currentlyBorrowedBooks} />
-          </div>
-         
-        </div>
-      </Link>
+    <>
+    <div className="user_Card">
+      <div className="user_Information">
+        <img alt="userimage" src="https://static.thenounproject.com/png/363639-200.png" />
+        <h5 className="user_name_card">{membership.firstName} {membership.lastName}</h5>
+        <h5 style={{ color: membership.membership }} className="Membership_card">Membership: {membership.membership}</h5>
+      </div>
+    <div className="booklist_itmes">
+      <Memberbooks membership={membership.currentlyBorrowedBooks} />
+    </div>
       { abc(membership.membership) }
       <UpdateRoomModal isOpen={isOpen} closeModal={closeModal} membership={membership} />
     </div>
+    </>
   );
 }
