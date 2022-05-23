@@ -19,7 +19,7 @@ function App() {
 
 <div className="Page_Content">
 <div className="w3-container w3-teal">
-<Link to={`/`}><h1>Booksy</h1></Link>
+<Link to={`/`}><h1 className="logoName">Booksy</h1></Link>
     </div>
         <Switch>
           <Route exact path="/" >

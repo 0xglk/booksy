@@ -4053,6 +4053,7 @@ hr {
     display: inline-block;
     padding-top: 20px;
     padding-bottom: 20px;
+    text-transform: capitalize;
 }
 .book_card img{
     display: block;
@@ -4159,6 +4160,7 @@ hr {
 }
 .user_Information{
     height: 100px;
+    text-transform: capitalize;
 }
 .user_Information img{
     position: absolute;
@@ -4173,6 +4175,7 @@ hr {
     position: absolute;
     margin-left: 100px;
     margin-top: 50px;
+    text-transform: capitalize;
 }
 .Membership_card{
     position: absolute;
@@ -4331,4 +4334,84 @@ button[disabled]{
 }
 .olListing{
     position: absolute;
+}
+.image_profile{
+    text-align: left;
+}
+.image_profile img {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 40%;
+    width: 100px;
+}
+.profile_detalis_information{
+    position: absolute;
+    text-align: center;
+    margin-top: 150px;
+    margin-left: 40%;
+    text-transform: capitalize;
+}
+
+.book_profile_list_itmes{
+    position:absolute;
+    text-align: center;
+    margin-left: 10px;
+    margin-top: -35px;
+}
+
+.profile_item_Borrowed{
+    position: relative;
+    margin-left: -470px;
+}
+a:link {
+    text-decoration: none;
+  }
+  a:hover {
+    color: white;
+  }
+.SearchBar_book{
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    height: 30px;
+    width: 40%;
+    text-align: left;
+    padding-left: 5px;
+}
+.select_option_book{
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block; 
+    height: 30px;
+    width: 40%;
+    border-left: 1px solid #000;
+}
+.Listing_users{
+    padding-bottom: 100px;
+    margin-bottom: 100px;
+}
+.olListing_borrowed{
+position: absolute;
+display: inline-block;
+margin-top: -150px;
+margin-left: -350px;
+height: 300px;
+width: 780px;
+overflow: scroll;
+background-color: #6c757d66;
+border-radius: 5px;
+}
+.profile_items_Borrowed{
+    margin-top: -150px;
+    position: absolute;
+    margin-top: -180px; 
+    margin-left: -450px;
+}
+.genres_info_details{
+    position: absolute;
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: -130px;
 }

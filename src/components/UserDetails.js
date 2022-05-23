@@ -9,17 +9,20 @@ const Bookdetails = ( ) => {
     const membership = membershipStore.membership.find((membership) => membership._id === membershipid);
   return (
     <>
-        <div className="book_card_details">
-            <img alt="bookimage" src="https://static.thenounproject.com/png/363639-200.png"/>
-          <div className="book_card_detalis_information">
-            <h6>{membership.firstName}{membership.lastName}</h6>
-            <span>By {membership.membership}</span>
+        <div className="image_profile">
+            <img alt="imageprofile" src="https://static.thenounproject.com/png/363639-200.png"/>
+          <div className="profile_detalis_information">
+            <h6>{membership.firstName} {membership.lastName}</h6>
+            <span>Membership: {membership.membership}</span>
             <div className="book_card_information_sty">
-            <div className="booklist_itmes">
+            <div className="book_profile_list_itmes">
+            <span className="profile_item_Borrowed">
+              Borrowed Books:
+            </span>
+            <ol className="olListing_profile">
             <Memberbooks membership={membership.currentlyBorrowedBooks} />
+            </ol>
             </div>
-            <p className="genres_info">Fantasy</p>
-            <p className="genres_info">Biography</p>
             </div>
           </div>
         </div>

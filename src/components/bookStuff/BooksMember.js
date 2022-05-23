@@ -13,14 +13,17 @@ const BooksMember = ({ bookedby }) => {
   });
   return (
     <div>
-      <span className="activeTime" style={{ color: "red" }}>
-      Before Borrowed by : 
+
+      <div className="Listing_users">
+      <span className="profile_items_Borrowed">
+        Borrowd by:
       </span>
-      <ol>
-      <span className="activeTime">
-      {listUsers}
-        </span>
-      </ol>
+        <ol className="olListing_borrowed">
+          <span>
+          {listUsers}
+          </span>
+        </ol>
+        </div>
     </div>
   );
 };

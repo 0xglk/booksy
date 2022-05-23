@@ -35,7 +35,12 @@ export default function ChatRoomitem(props) {
         <h5 style={{ color: membership.membership }} className="Membership_card">Membership: {membership.membership}</h5>
       </div>
     <div className="booklist_itmes">
+    <span className="book_item_Borrowed">
+        Borrowed Books
+      </span>
+      <ol className="olListing">
       <Memberbooks membership={membership.currentlyBorrowedBooks} />
+      </ol>
     </div>
     
       { abc(membership.membership) }

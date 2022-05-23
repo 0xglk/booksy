@@ -8,12 +8,7 @@ const Memberbooks = ({ membership }) => {
   });
   return (
     <>
-      <span className="book_item_Borrowed">
-        Borrowed Books
-      </span>
-      <ol className="olListing">
       {membershipList}
-      </ol>
     </>
   );
 };

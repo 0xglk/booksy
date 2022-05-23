@@ -25,8 +25,8 @@ function BookList() {
     <div>
     <div className="filter_container filter_bar">
       <h5>Filter Bar: </h5>
-      <input type="search" placeholder="Search"  onChange={(e) => setQuery(e.target.value)}/>
-      <select defaultValue={'default'} aria-label="Default select example" onChange={(e) => setType(e.target.value)}>
+      <input type="search" placeholder="Search" className="SearchBar_book"  onChange={(e) => setQuery(e.target.value)}/>
+      <select defaultValue={'default'} aria-label="Default select example"  className="select_option_book"  onChange={(e) => setType(e.target.value)}>
             <option value="" default > All</option>
                 {SelectorOptions}
         </select>

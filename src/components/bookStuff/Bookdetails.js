@@ -10,6 +10,9 @@ const Bookdetails = ( ) => {
     const onError = (e) => {
         e.target.src="https://kwx2f3rgme1bvul52zzobow3-wpengine.netdna-ssl.com/wp-content/themes/realestate-7/images/no-image.png"
       };
+      const Catagory = book.genres.map((book) => {
+        return(<p className="genres_info"> {book} </p> )
+      });
   return (
     <>
         <div className="book_card_details">
@@ -17,9 +20,8 @@ const Bookdetails = ( ) => {
           <div className="book_card_detalis_information">
             <h6>{book.title}</h6>
             <span>By {book.author}</span>
-            <div className="book_card_information_sty">
-            <p className="genres_info">Fantasy</p>
-            <p className="genres_info">Biography</p>
+            <div className="genres_info_details">
+              {Catagory}
             </div>
           </div>
           <BooksMember bookedby={book.borrowedBy} />
