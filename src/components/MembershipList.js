@@ -19,20 +19,17 @@ function MembershipList() {
     return <Membershipitem membership= {membership} key={membership._id} />;
   });
   return (
-    <div className="main__chatlist">
-      <button className="btn">
+    <>
+      <button className="button_add_user">
         <i className="fa fa-plus"></i>
         <span onClick={openModal}>New Member</span>
         <CreateRoomModal isOpen={isOpen} closeModal={closeModal} />
       </button>
-      <Link to={`/BookList/bookStuff`}>
-      <button className="btn">
-        <i className="fa fa-plus"></i>
-        <span>Books List</span>
-      </button>
-      </Link>
-      <div className="chatlist__items">{membershipList}</div>
+      <div className="w3-container">
+      <h2>Book List </h2>
+      {membershipList}
     </div>
+    </>
   );
 }
 export default observer(MembershipList);

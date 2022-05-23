@@ -4303,3 +4303,16 @@ button[disabled]{
     font-size: 12px;
     background-color: red;
 }
+.button_add_user{
+    margin-top: 5px;
+    background-color: #009688;
+    letter-spacing: 1px;
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    padding: 5px 12px;
+    border-radius: 5px;
+}

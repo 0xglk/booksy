@@ -2,6 +2,7 @@ import React from "react";
 import { observer } from "mobx-react";
 import bookStore from "../../stores/booksStore";
 import { Link, Navigate, useParams } from "react-router-dom";
+import BooksMember from "./BooksMember";
 
 const Bookdetails = ( ) => {
   let {bookid}  = useParams();
@@ -21,6 +22,7 @@ const Bookdetails = ( ) => {
             <p className="genres_info">Biography</p>
             </div>
           </div>
+          <BooksMember bookedby={book.borrowedBy} />
         </div>
     </>
   );
