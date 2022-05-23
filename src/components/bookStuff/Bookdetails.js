@@ -4,8 +4,7 @@ import bookStore from "../../stores/booksStore";
 import { Link, Navigate, useParams } from "react-router-dom";
 
 const Bookdetails = ( ) => {
-  let { bookid } = useParams();
-  console.log(bookid)
+  let {bookid}  = useParams();
     const book = bookStore.books.find((book) => book._id === bookid);
     const onError = (e) => {
         e.target.src="https://kwx2f3rgme1bvul52zzobow3-wpengine.netdna-ssl.com/wp-content/themes/realestate-7/images/no-image.png"

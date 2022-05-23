@@ -39,8 +39,6 @@ class BookStore {
   };
 
   createRoom = async (book) => {
-    book._id = this.books[this.books.length - 1]._id + 1;
-    book.slug = slugify(book.title);
     this.books.push(book);
 
     console.log(book);
