@@ -4269,7 +4269,7 @@ button[disabled]{
 }
 .book_item_Borrowed{
     font-size: 12px; 
-    margin-left: 5px;
+    margin-left: 0px;
 }
 .book_item_Borrowed_button_card{
     border-radius: 5px;
@@ -4284,11 +4284,11 @@ button[disabled]{
     font-size: 12px;
 }
 .book_item {
-    margin-top: 5px;
+    margin-top: 2px;
     text-align: left;
     font-size: 12px;
-    margin-left: 0px;
-    width: 150px;
+    margin-left: -20px;
+    width: 270px;
 }
 
 .book_item_Borrowed_button_full{
@@ -4328,4 +4328,7 @@ button[disabled]{
     text-decoration: none;
     display: inline-block;
     font-size: 12px;
+}
+.olListing{
+    position: absolute;
 }

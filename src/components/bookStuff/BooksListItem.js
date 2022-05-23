@@ -10,6 +10,9 @@ export default function BookListItem(props) {
   const onError = (e) => {
     e.target.src="https://kwx2f3rgme1bvul52zzobow3-wpengine.netdna-ssl.com/wp-content/themes/realestate-7/images/no-image.png"
   };
+  const Catagory = book.genres.map((book) => {
+    return(<p className="genres_info"> {book} </p> )
+  });
   return (
     <>
       <Link to={`/Bookdetails/${book._id}`}>
@@ -20,8 +23,7 @@ export default function BookListItem(props) {
             <h6>{book.title}</h6>
             <span>By {book.author}</span>
             <div className="book_card_information_sty">
-            <p className="genres_info">Biography</p>
-            <p className="genres_info">Biography</p>
+              {Catagory}
             </div>
             <div className="buttons_card">
             {book.available === true ? "" : <UpdateBookModal  book={book} /> }

@@ -11,7 +11,7 @@ const Memberbooks = ({ membership }) => {
       <span className="book_item_Borrowed">
         Borrowed Books
       </span>
-      <ol>
+      <ol className="olListing">
       {membershipList}
       </ol>
     </>
