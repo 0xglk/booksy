@@ -3,16 +3,14 @@ import { observer } from "mobx-react";
 import bookStore from "../../stores/booksStore";
 import { Link, Navigate, useParams } from "react-router-dom";
 import BooksMember from "./BooksMember";
+import GenresList from "./GenresList";
 
 const Bookdetails = ( ) => {
-  let {bookid}  = useParams();
-    const book = bookStore.books.find((book) => book._id === bookid);
+  let {slugid}  = useParams();
+    const book = bookStore.books.find((book) => book.slug === slugid);
     const onError = (e) => {
         e.target.src="https://kwx2f3rgme1bvul52zzobow3-wpengine.netdna-ssl.com/wp-content/themes/realestate-7/images/no-image.png"
       };
-      const Catagory = book.genres.map((book) => {
-        return(<p className="genres_info"> {book} </p> )
-      });
   return (
     <>
         <div className="book_card_details">
@@ -21,7 +19,7 @@ const Bookdetails = ( ) => {
             <h6>{book.title}</h6>
             <span>By {book.author}</span>
             <div className="genres_info_details">
-              {Catagory}
+            <GenresList genres={book.genres} />
             </div>
           </div>
           <BooksMember bookedby={book.borrowedBy} />

@@ -4415,3 +4415,18 @@ border-radius: 5px;
     margin-top: 50px;
     margin-left: -130px;
 }
+.false_details{
+    position: absolute;
+    z-index: 2;
+    width: 130px;
+    height: 30px;
+
+    margin-top: -1px;
+    margin-left: 55px;
+    padding: 2px;
+    text-align: center;
+    font-size: 15px;
+    
+    background-color: rgba(237, 0, 0, 0.81);
+    border-radius: 5px 5px 0 0 ;
+}

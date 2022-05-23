@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { makeObservable, observable, action } from 'mobx';
 import slugify from 'react-slugify';
+import bookStore from "./booksStore";
 class MembershipStore {
   membership = [
     {
@@ -30,11 +31,12 @@ fetchMemberships = async () =>{
   }
 }
   createMembership = (membership) => {
-  
+    membership.slug = slugify(`${membership.firstName}-${membership.lastName}`);
     this.membership.push(membership);
     try {
       axios.post("https://library-borrow-system.herokuapp.com/api/members",membership);
-    } catch (error) {
+    } 
+    catch (error) {
       console.log(error);
     }
   };
@@ -53,11 +55,12 @@ fetchMemberships = async () =>{
   updateMembership = async (updatedMembership) => {
 //https://library-borrow-system.herokuapp.com/api/books/628685bb308ef6b485b9fc08/borrow/6287c44ce2f657d502cc7023
     const membership = this.membership.find((membership) => membership._id === updatedMembership._id);
-    membership.currentlyBorrowedBooks.push(updatedMembership.currentlyBorrowedBooks)
+    membership.currentlyBorrowedBooks.push(updatedMembership.currentlyBorrowedBooks);
+
     try {
-      await axios.put(`https://library-borrow-system.herokuapp.com/api/books/${updatedMembership.currentlyBorrowedBooks}/borrow/${updatedMembership._id}`)
+      await axios.put(`https://library-borrow-system.herokuapp.com/api/books/${updatedMembership.currentlyBorrowedBooks}/borrow/${updatedMembership._id}`);
+      bookStore.fetchRooms();
     } catch (error) {
-      
       console.log(error);
     }
   };

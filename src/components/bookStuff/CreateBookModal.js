@@ -12,18 +12,17 @@ export default function CreateBookModal(props) {
     available: true,
     borrowedBy: [],
     image: "",
+    slug:"",
   });
 
   const handleChange1 = (event) => {
     if (event.target.checked === true) {
       genresArray.push(event.target.value);
-      console.log(genresArray);
 
     } else {
       const index = genresArray.indexOf(event.target.value);
       if (index > -1) {
         genresArray.splice(index, 1);
-        console.log(genresArray);
       }
     }
 
@@ -35,6 +34,7 @@ export default function CreateBookModal(props) {
     event.preventDefault();
     bookStore.createRoom(book);
     props.closeModal();
+    
   };
   const optionList = ['Action', 'Fantasy', 'Sci-Fi', 'Romance', 'Fiction', 'Self-Help', 'Thriller', 'Suspense', 'Biography', 'Business', 'Entrepreneurship', 'Crime', 'Mystery'];
   const SelectorOptions = optionList.map((option) => {

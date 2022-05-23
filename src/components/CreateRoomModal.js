@@ -4,12 +4,11 @@ import membershipStore from "../stores/membershipStore";
 
 export default function CreateRoomModal(props) {
   const [user, setRoom] = useState({
-    // _id: "",
     firstName: "",
     lastName: "",
     membership: "silver",
     currentlyBorrowedBooks: [],
-    // slug: "",
+    slug: "",
   });
   const handleChange = (event) => {
     setRoom({ ...user, [event.target.name]: event.target.value });
@@ -43,21 +42,12 @@ export default function CreateRoomModal(props) {
           <Form.Group className="mb-3">
             <Form.Label>membership</Form.Label>
             <Form.Select name="membership" onChange={handleChange}>
-              <option>Select</option>
+              <option selected value="silver" >Select</option>
               <option value="platinum"> platinum</option>
               <option value="gold">gold</option>
               <option value="silver">silver</option>
             </Form.Select>
           </Form.Group>
-          {/* <InputGroup>
-            <InputGroup.Text>membership</InputGroup.Text>
-            <Form.Control
-              type="select"
-              name="membership"
-              onChange={handleChange}
-            />
-          </InputGroup> */}
-          <br />
         </Form>
       </Modal.Body>
       <Modal.Footer>

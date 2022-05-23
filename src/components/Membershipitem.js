@@ -44,9 +44,9 @@ export default function ChatRoomitem(props) {
     </div>
     
       { abc(membership.membership) }
-      <Link to={`/UserDetails/${membership._id}`}>
+      <Link to={`/UserDetails/${membership.slug}`}>
       <button onClick={openModal} className="book_item_information_button_card">Profile Information</button>
-      </Link>
+      </Link> 
       <UpdateRoomModal isOpen={isOpen} closeModal={closeModal} membership={membership} />
     </div>
 

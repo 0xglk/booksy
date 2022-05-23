@@ -1,6 +1,7 @@
 import { makeObservable, observable, action } from "mobx";
 import slugify from "react-slugify";
 import axios from "axios";
+import membershipStore from '../stores/membershipStore';
 
 class BookStore {
   books = [
@@ -39,14 +40,14 @@ class BookStore {
   };
 
   createRoom = async (book) => {
+    book.slug = slugify(book.title);
     this.books.push(book);
-
-    console.log(book);
     try {
       await axios.post(
         "https://library-borrow-system.herokuapp.com/api/books",
         book
       );
+      bookStore.fetchRooms();
     } catch (e) {
       console.log(e);
     }
@@ -69,12 +70,13 @@ class BookStore {
 
   updateRoom = async (updatedRoom) => {
     const book = this.books.find((book) => book._id === updatedRoom._id);
-    book.available = true ;
-    this.books.push(book);
+    book.available = true;
     try {
       await axios.put(
         `https://library-borrow-system.herokuapp.com/api/books/${book._id}/return/${[updatedRoom.borrowedBy]}`
       );
+      bookStore.fetchRooms();
+      membershipStore.fetchMemberships();
     } catch (e) {
       console.error(e);
     }

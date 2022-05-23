@@ -25,12 +25,12 @@ function App() {
           <Route exact path="/" >
             <BookList />
           </Route>
-          <Route path="/Bookdetails/:bookid">
+          <Route path="/Bookdetails/:slugid">
             <center>
             <Bookdetails />
             </center>
           </Route>
-          <Route path="/UserDetails/:membershipid">
+          <Route path="/UserDetails/:slugid">
             <center>
             <UserDetails />
             </center>

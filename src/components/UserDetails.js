@@ -5,8 +5,9 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import Memberbooks from "./Memberbooks";
 
 const Bookdetails = ( ) => {
-  let {membershipid}  = useParams();
-    const membership = membershipStore.membership.find((membership) => membership._id === membershipid);
+  let {slugid}  = useParams();
+    const membership = membershipStore.membership.find((membership) => membership.slug === slugid);
+    console.log(membership.firstName,membership.lastName);
   return (
     <>
         <div className="image_profile">

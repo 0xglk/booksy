@@ -15,7 +15,7 @@ export default function BookListItem(props) {
   });
   return (
     <>
-      <Link to={`/Bookdetails/${book._id}`}>
+      <Link to={`/Bookdetails/${book.slug}`}>
       <div className="book_card">
           {book.available === true ? "" : <h6 className="false">Borrowed</h6> }
           <img alt="bookimage" onError={onError} src={book.image}/>

@@ -26,7 +26,7 @@ function MembershipList() {
         <CreateRoomModal isOpen={isOpen} closeModal={closeModal} />
       </button>
       <div className="w3-container">
-      <h2>Book List </h2>
+      <h2>Users List </h2>
       {membershipList}
     </div>
     </>
