@@ -4316,3 +4316,15 @@ button[disabled]{
     padding: 5px 12px;
     border-radius: 5px;
 }
+.book_item_information_button_card{
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-top: 150px;
+    padding: 5px 10px;
+    width: 150px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}

@@ -27,7 +27,7 @@ export default function ChatRoomitem(props) {
 
   return (
     <>
-    <Link to={`/UserDetails/${membership._id}`}>
+
     <div className="user_Card">
       <div className="user_Information">
         <img alt="userimage" src="https://static.thenounproject.com/png/363639-200.png" />
@@ -37,10 +37,14 @@ export default function ChatRoomitem(props) {
     <div className="booklist_itmes">
       <Memberbooks membership={membership.currentlyBorrowedBooks} />
     </div>
+    
       { abc(membership.membership) }
+      <Link to={`/UserDetails/${membership._id}`}>
+      <button onClick={openModal} className="book_item_information_button_card">Profile Information</button>
+      </Link>
       <UpdateRoomModal isOpen={isOpen} closeModal={closeModal} membership={membership} />
     </div>
-    </Link>
+
     </>
   );
 }
