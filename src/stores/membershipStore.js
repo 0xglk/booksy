@@ -30,11 +30,10 @@ fetchMemberships = async () =>{
     console.log(error);
   }
 }
-  createMembership = (membership) => {
-    membership.slug = slugify(`${membership.firstName}-${membership.lastName}`);
-    this.membership.push(membership);
+  createMembership = async (membership) => {
     try {
-      axios.post("https://library-borrow-system.herokuapp.com/api/members",membership);
+     const response = await axios.post("https://library-borrow-system.herokuapp.com/api/members",membership);
+      this.membership.push(response.data); 
     } 
     catch (error) {
       console.log(error);

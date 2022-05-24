@@ -40,14 +40,9 @@ class BookStore {
   };
 
   createRoom = async (book) => {
-    book.slug = slugify(book.title);
-    this.books.push(book);
-    try {
-      await axios.post(
-        "https://library-borrow-system.herokuapp.com/api/books",
-        book
-      );
-      bookStore.fetchRooms();
+    try { 
+      const response =  await axios.post("https://library-borrow-system.herokuapp.com/api/books",book );
+      this.books.push(response.data); 
     } catch (e) {
       console.log(e);
     }
