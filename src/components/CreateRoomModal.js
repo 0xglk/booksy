@@ -41,8 +41,8 @@ export default function CreateRoomModal(props) {
           <br />
           <Form.Group className="mb-3">
             <Form.Label>membership</Form.Label>
-            <Form.Select name="membership" onChange={handleChange}>
-              <option selected value="silver" >Select</option>
+            <Form.Select defaultValue={'default'} name="membership" onChange={handleChange}>
+              <option default value="silver" >Select</option>
               <option value="platinum"> platinum</option>
               <option value="gold">gold</option>
               <option value="silver">silver</option>
